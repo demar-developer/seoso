@@ -1,11 +1,13 @@
-<script>
+<script setup>
 import SidebarNav from "../../components/SidebarNav.vue";
+import IconChevronDown from "../../components/icons/IconChevronDown.vue";
 
-export default {
-  components: {
-    SidebarNav,
-  },
-};
+// export default {
+//   components: {
+//     SidebarNav,
+//     ChevronDownIcon,
+//   },
+// };
 </script>
 
 <template>
@@ -14,8 +16,8 @@ export default {
 
     <SidebarNav />
     <div class="w-full h-full">
-      <div
-        class="h-[56px] bg-[#191d20] flex items-center px-[40px] w-full py-[10px] border-b border-[#232428] z-10"
+      <nav
+        class="h-[56px] bg-[#191d20] flex items-center justify-between px-[40px] w-full py-[10px] border-b border-[#232428] z-10"
       >
         <div
           class="rounded-md bg-zinc-50 ring-1 ring-zinc-900/7.5 dark:bg-zinc-900 dark:ring-zinc-800 sm:max-w-xl opacity-100 scale-100"
@@ -43,7 +45,68 @@ export default {
             />
           </div>
         </div>
-      </div>
+        <div class="flex space-x-2">
+          <button
+            class="relative flex h-11 w-11 items-center justify-center rounded-full dark:bg-zinc-900 text-gray-400 hover:text-white focus:ring-1 focus:ring-zinc-800"
+          >
+            <div>
+              <svg
+                fill="none"
+                viewBox="0 0 24 24"
+                class="h-7 w-7 stroke-current"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M17.25 12V10C17.25 7.1005 14.8995 4.75 12 4.75C9.10051 4.75 6.75 7.10051 6.75 10V12L4.75 16.25H19.25L17.25 12Z"
+                />
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M9 16.75C9 16.75 9 19.25 12 19.25C15 19.25 15 16.75 15 16.75"
+                />
+              </svg>
+            </div>
+            <div class="absolute top-3 right-3 flex h-2 w-2">
+              <span
+                class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#FABF0D] opacity-75"
+              />
+              <span class="inline-flex h-2 w-2 rounded-full bg-[#FABF0D]" />
+            </div>
+          </button>
+          <button
+            class="flex h-11 items-center justify-center rounded-full dark:bg-zinc-900 px-2 text-gray-500 hover:text-white focus:ring-1 focus:ring-zinc-800"
+          >
+            <img
+              src="/img/avatar-1.jpg"
+              alt=""
+              class="h-8 w-8 rounded-full object-cover"
+            />
+            <span class="pl-2 text-sm">Demar</span>
+            <!-- <ChevronDownIcon class="h-6 w-6 stroke-current" /> -->
+            <!-- <div>
+              <svg
+                fill="none"
+                viewBox="0 0 24 24"
+                class="h-6 w-6 stroke-current"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M15.25 10.75L12 14.25L8.75 10.75"
+                />
+              </svg>
+            </div> -->
+            <IconChevronDown class="h-6 w-6 stroke-current" />
+          </button>
+        </div>
+      </nav>
       <div class="h-[calc(100vh-56px)] p-[20px]">
         <div
           class="h-full bg-[#191d20] border rounded-md border-[#232428] p-[20px]"
