@@ -1,13 +1,6 @@
 <script setup>
 import SidebarNav from "../../components/SidebarNav.vue";
 import IconChevronDown from "../../components/icons/IconChevronDown.vue";
-
-// export default {
-//   components: {
-//     SidebarNav,
-//     ChevronDownIcon,
-//   },
-// };
 </script>
 
 <template>
@@ -19,30 +12,36 @@ import IconChevronDown from "../../components/icons/IconChevronDown.vue";
       <nav
         class="h-[56px] bg-[#191d20] flex items-center justify-between px-[40px] w-full py-[10px] border-b border-[#232428] z-10"
       >
-        <div
-          class="rounded-md bg-zinc-50 ring-1 ring-zinc-900/7.5 dark:bg-zinc-900 dark:ring-zinc-800 sm:max-w-xl opacity-100 scale-100"
-        >
-          <div class="group relative flex h-8">
-            <svg
-              viewBox="0 0 20 20"
-              fill="none"
-              aria-hidden="true"
-              class="pointer-events-none absolute left-3 top-0 h-full w-5 stroke-zinc-500"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12.01 12a4.25 4.25 0 1 0-6.02-6 4.25 4.25 0 0 0 6.02 6Zm0 0 3.24 3.25"
-              ></path>
-            </svg>
-            <input
-              class="flex-auto appearance-none bg-transparent pl-10 text-zinc-900 outline-none placeholder:text-zinc-500 focus:w-full focus:flex-none dark:text-white sm:text-sm pr-4"
-              placeholder="Find something..."
-              maxlength="512"
-              type="search"
-              value=""
-              tabindex="0"
-            />
+        <div class="flex">
+          <span
+            class="inline-flex items-center rounded-l-md border-r-0 bg-zinc-50 ring-1 ring-zinc-900/7.5 dark:bg-zinc-900 dark:ring-zinc-800 sm:max-w-xl opacity-100 scale-100 px-3 text-gray-400 sm:text-sm"
+            >http or https://
+          </span>
+          <div
+            class="rounded-none rounded-r-md bg-zinc-50 ring-1 ring-zinc-900/7.5 dark:bg-zinc-900 dark:ring-zinc-800 sm:max-w-xl opacity-100 scale-100"
+          >
+            <div class="group relative flex h-8">
+              <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                aria-hidden="true"
+                class="pointer-events-none absolute left-3 top-0 h-full w-5 stroke-zinc-500"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12.01 12a4.25 4.25 0 1 0-6.02-6 4.25 4.25 0 0 0 6.02 6Zm0 0 3.24 3.25"
+                ></path>
+              </svg>
+              <input
+                class="flex-auto appearance-none bg-transparent pl-10 text-zinc-900 outline-none placeholder:text-zinc-500 focus:w-full focus:flex-none dark:text-white sm:text-sm pr-4"
+                placeholder="www.example.com"
+                maxlength="512"
+                type="search"
+                value=""
+                tabindex="0"
+              />
+            </div>
           </div>
         </div>
         <div class="flex space-x-2">
@@ -79,7 +78,7 @@ import IconChevronDown from "../../components/icons/IconChevronDown.vue";
             </div>
           </button>
           <button
-            class="flex h-11 items-center justify-center rounded-full dark:bg-zinc-900 px-2 text-gray-500 hover:text-white focus:ring-1 focus:ring-zinc-800"
+            class="flex h-11 items-center justify-center rounded-full dark:bg-zinc-900 px-2 text-gray-300 hover:text-white focus:ring-1 focus:ring-zinc-800"
           >
             <img
               src="/img/avatar-1.jpg"
@@ -87,22 +86,6 @@ import IconChevronDown from "../../components/icons/IconChevronDown.vue";
               class="h-8 w-8 rounded-full object-cover"
             />
             <span class="pl-2 text-sm">Demar</span>
-            <!-- <ChevronDownIcon class="h-6 w-6 stroke-current" /> -->
-            <!-- <div>
-              <svg
-                fill="none"
-                viewBox="0 0 24 24"
-                class="h-6 w-6 stroke-current"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M15.25 10.75L12 14.25L8.75 10.75"
-                />
-              </svg>
-            </div> -->
             <IconChevronDown class="h-6 w-6 stroke-current" />
           </button>
         </div>
