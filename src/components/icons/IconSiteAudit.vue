@@ -1,5 +1,5 @@
 <template>
-  <svg class="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24">
+  <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
     <circle cx="15" cy="9" r="1" fill="currentColor"></circle>
     <path
       stroke="currentColor"

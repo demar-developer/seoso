@@ -7,7 +7,7 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "Dashboard",
+      name: "dashboard",
       component: DashboardView,
       children: [
         {
