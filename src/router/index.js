@@ -1,15 +1,21 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import DashboardView from "../views/dashboard/DashboardView.vue";
+import MasterView from "../views/dashboard/MasterView.vue";
+import DashBoardView from "../views/dashboard/DashBoardView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
-      name: "dashboard",
-      component: DashboardView,
+      name: "index",
+      component: MasterView,
       children: [
+        {
+          path: "/dashboard",
+          name: "dashboard",
+          component: DashBoardView,
+        },
         {
           path: "/home",
           name: "home",

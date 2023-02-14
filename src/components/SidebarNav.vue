@@ -10,6 +10,7 @@ import IconSosalMediaTracker from "../components/icons/IconSosalMediaTracker.vue
 import IconPositionTracker from "../components/icons/IconPositionTracker.vue";
 import IconOnPageSeo from "../components/icons/IconOnPageSeo.vue";
 import IconSettings from "../components/icons/IconSettings.vue";
+import IconLogout from "./icons/IconLogout.vue";
 
 const is_expanded = ref(localStorage.getItem("is_expanded") === "true");
 const isSubmenuVisible = ref(
@@ -53,22 +54,14 @@ const sidebarMenus = [
 ];
 </script>
 
-<style scoped>
-.sidebar-btn:hover {
-  background: #272b30;
-  box-shadow: inset 0px -2px 1px rgba(0, 0, 0, 0.4),
-    inset 0px 1px 1px rgba(255, 255, 255, 0.11);
-  border-radius: 12px;
-  justify-content: center;
-}
-</style>
+<style scoped></style>
 
 <template>
   <aside
     :class="`${
       is_expanded
-        ? 'w-[300px] h-full bg-[#1A1D1F] border-r-2 border-[#272B30]'
-        : 'w-20 h-full bg-[#1A1D1F] border-r-2 border-[#272B30]'
+        ? 'w-[400px] h-full bg-[#FFFFFF] dark:bg-[#1A1D1F] border-r-2 border-[#EFEFEF] dark:border-[#272B30]'
+        : 'w-20 h-full bg-[#FFFFFF] dark:bg-[#1A1D1F] border-r-2 border-[#EFEFEF] dark:border-[#272B30]'
     } duration-300 relative`"
   >
     <div class="px-6">
@@ -101,7 +94,7 @@ const sidebarMenus = [
             />
           </svg>
           <h1
-            :class="`font-bold text-2xl duration-300 ${
+            :class="`font-bold text-[#302F33] dark:text-white text-2xl duration-300 ${
               !is_expanded && 'scale-0'
             }`"
           >
@@ -146,7 +139,7 @@ const sidebarMenus = [
             <ul class="flex flex-col space-y-2">
               <li class="" v-for="item in sidebarMenus" v-bind:key="item.id">
                 <div
-                  class="relative flex justify-between text-gray-300 hover:text-white focus-within:text-white"
+                  class="relative flex justify-between text-[#6F767E] dark:text-gray-300 hover:text-[#1A1D1F]"
                 >
                   <div class="flex items-center w-full">
                     <div
@@ -156,8 +149,8 @@ const sidebarMenus = [
                     </div>
                     <RouterLink
                       :to="{ name: item.link }"
-                      class="sidebar-btn inline-block w-full py-2 pl-10 rounded-md hover:bg-[#272B30] focus:outline-none focus:ring-1 focus:ring-zinc-800 focus:bg-[#232428]"
-                      :class="`${!is_expanded && 'opacity-0'}`"
+                      class="hover:shadow-[inset_0px_-2px_1px_rgba(0,0,0,0.05),inset_0px_1px_1px_#FFFFFF] dark:hover:shadow-[inset_0px_-2px_1px_rgba(0,0,0,0.5),inset_0px_1px_1px_rgba(255,255,255,0.11)] hover:bg-[#EFEFEF] inline-block w-full py-3 pl-10 rounded-xl dark:hover:bg-[#272B30] focus:outline-none"
+                      :class="`${!is_expanded && 'scale-0'}`"
                     >
                       {{ item.title }}
                     </RouterLink>
@@ -189,7 +182,7 @@ const sidebarMenus = [
                 <template v-if="item.submenu && is_expanded">
                   <div class="pt-2 pl-4">
                     <ul
-                      class="flex flex-col pl-2 text-gray-400 border-l border-gray-700 duration-300"
+                      class="flex flex-col pl-2 text-[#6F767E] dark:text-gray-400 border-l border-gray-700 duration-300"
                       v-if="item.submenu"
                       v-show="isSubmenuVisible"
                     >
@@ -199,7 +192,7 @@ const sidebarMenus = [
                       >
                         <RouterLink
                           :to="{ name: subitem.link }"
-                          class="sidebar-btn inline-block w-full px-4 py-2 text-smd rounded hover:text-white focus:outline-none focus:ring-0"
+                          class="hover:shadow-[inset_0px_-2px_1px_rgba(0,0,0,0.05),inset_0px_1px_1px_#FFFFFF] dark:hover:shadow-[inset_0px_-2px_1px_rgba(0,0,0,0.5),inset_0px_1px_1px_rgba(255,255,255,0.11)] hover:bg-[#EFEFEF] dark:hover:bg-[#272B30] inline-block w-full px-4 py-3 text-smd rounded-xl text-[#6F767E] dark:text-gray-300 hover:text-[#1A1D1F] focus:outline-none"
                           >{{ subitem.title }}
                         </RouterLink>
                       </li>
@@ -213,7 +206,7 @@ const sidebarMenus = [
             <div>
               <ul>
                 <li
-                  class="relative text-gray-300 hover:text-white focus-within:text-white"
+                  class="relative text-[#6F767E] dark:text-gray-300 hover:text-[#1A1D1F]"
                 >
                   <div
                     class="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none"
@@ -223,7 +216,7 @@ const sidebarMenus = [
 
                   <RouterLink
                     to="/"
-                    :class="`inline-block w-full py-2 pl-10 pr-4 text-md rounded hover:bg-[#232428] focus:outline-none focus:ring-1 focus:ring-zinc-800 focus:bg-[#232428] ${
+                    :class="`hover:shadow-[inset_0px_-2px_1px_rgba(0,0,0,0.05),inset_0px_1px_1px_#FFFFFF] dark:hover:shadow-[inset_0px_-2px_1px_rgba(0,0,0,0.5),inset_0px_1px_1px_rgba(255,255,255,0.11)] hover:bg-[#EFEFEF] inline-block w-full py-3 pl-10 rounded-xl dark:hover:bg-[#272B30] pr-4 text-md focus:outline-none ${
                       !is_expanded && 'scale-0'
                     } duration-300`"
                   >
@@ -231,35 +224,17 @@ const sidebarMenus = [
                   </RouterLink>
                 </li>
                 <li
-                  class="relative text-gray-300 hover:text-white focus-within:text-white"
+                  class="relative text-[#6F767E] dark:text-gray-300 hover:text-[#1A1D1F]"
                 >
                   <div
                     class="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none"
                   >
-                    <svg
-                      class="w-6 h-6"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M11.0287 15.0007C11.5806 14.9799 12.0449 15.4104 12.0657 15.9623C12.1127 17.2065 12.1786 18.1145 12.2435 18.7656C12.3074 19.4068 12.6945 19.7926 13.2341 19.8586C13.8703 19.9363 14.7678 20 15.9995 20C17.2312 20 18.1287 19.9363 18.765 19.8586C19.3043 19.7926 19.6916 19.4067 19.7555 18.7653C19.8758 17.5568 19.9995 15.4688 19.9995 12C19.9995 8.53118 19.8758 6.44321 19.7555 5.23468C19.6916 4.59333 19.3043 4.20736 18.765 4.14144C18.1287 4.06366 17.2312 4 15.9995 4C14.7678 4 13.8703 4.06365 13.234 4.14143C12.6945 4.20739 12.3074 4.59318 12.2435 5.23437C12.1786 5.88545 12.1127 6.79354 12.0657 8.03772C12.0449 8.58961 11.5806 9.02012 11.0287 8.99929C10.4768 8.97845 10.0463 8.51417 10.0671 7.96228C10.1153 6.68524 10.1837 5.73543 10.2534 5.03611C10.3998 3.56595 11.4248 2.3477 12.9914 2.15621C13.7206 2.06707 14.7003 2 15.9995 2C17.2987 2 18.2785 2.06707 19.0077 2.15622C20.5743 2.34774 21.5992 3.56655 21.7456 5.03643C21.8745 6.33068 21.9995 8.48847 21.9995 12C21.9995 15.5115 21.8745 17.6693 21.7456 18.9636C21.5992 20.4334 20.5744 21.6523 19.0077 21.8438C18.2785 21.9329 17.2987 22 15.9995 22C14.7003 22 13.7206 21.9329 12.9914 21.8438C11.4248 21.6523 10.3998 20.4341 10.2534 18.9639C10.1837 18.2646 10.1153 17.3148 10.0671 16.0377C10.0463 15.4858 10.4768 15.0215 11.0287 15.0007Z"
-                        fill="#EFEFEF"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M7.20711 14.7929C7.59763 15.1834 7.59763 15.8166 7.20711 16.2071C6.81658 16.5976 6.18342 16.5976 5.79289 16.2071L2.29289 12.7071C1.90237 12.3166 1.90237 11.6834 2.29289 11.2929L5.79289 7.79289C6.18342 7.40237 6.81658 7.40237 7.20711 7.79289C7.59763 8.18342 7.59763 8.81658 7.20711 9.20711L5.41421 11H15C15.5523 11 16 11.4477 16 12C16 12.5523 15.5523 13 15 13L5.41421 13L7.20711 14.7929Z"
-                        fill="#EFEFEF"
-                      />
-                    </svg>
+                    <IconLogout />
                   </div>
 
                   <RouterLink
                     to="/"
-                    :class="`inline-block w-full py-2 pl-10 pr-4 text-md rounded hover:bg-[#232428] focus:outline-none focus:ring-1 focus:ring-zinc-800 focus:bg-[#232428] ${
+                    :class="`hover:shadow-[inset_0px_-2px_1px_rgba(0,0,0,0.05),inset_0px_1px_1px_#FFFFFF] dark:hover:shadow-[inset_0px_-2px_1px_rgba(0,0,0,0.5),inset_0px_1px_1px_rgba(255,255,255,0.11)] hover:bg-[#EFEFEF] inline-block w-full py-2 pl-10 rounded-xl dark:hover:bg-[#272B30] pr-4 text-md focus:outline-none ${
                       !is_expanded && 'scale-0'
                     } duration-300`"
                   >
